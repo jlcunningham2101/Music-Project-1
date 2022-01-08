@@ -6,7 +6,7 @@ searchButton.addEventListener("click", function(event) {
     event.preventDefault();
     // console.log("click");
     // console.log(this);
-    var userInput = document.getElementById("input-box").val();
+    var userInput = document.getElementById("input-box").value;
     console.log(userInput);
 })
 
