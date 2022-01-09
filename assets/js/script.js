@@ -1,19 +1,104 @@
 // click function for the search button, which submits the user input
+// var searchButton = document.getElementById("search-btn");
+// // console.log(searchButton);
+
+// searchButton.addEventListener("click", function(event) {
+//     event.preventDefault();
+//     // console.log("click");
+//     // console.log(this);
+//     var userInput = document.getElementById("input-box").value;
+//     console.log(userInput);
+// })
+
+// var apiKey = ("AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU") //dans youtube api
+
+// fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=hip-hop&key=AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU')
+
+// .then(res => res.json())
+
+// .then(data => console.log(data))
+
+var apiKey = ("AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU") //dans youtube api
+var list = []
+var listMusicEl = document.getElementById('#list-Music')
+// click function for the search button, which submits the user input
 var searchButton = document.getElementById("search-btn");
 // console.log(searchButton);
 
-searchButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    // console.log("click");
-    // console.log(this);
-    var userInput = document.getElementById("input-box").value;
-    console.log(userInput);
+// searchButton.addEventListener("click", function(event) {
+//     event.preventDefault();
+//     // console.log("click");
+//     // console.log(this);
+//     var userInput = document.getElementById("input-box").value;
+//     console.log(userInput);
+// })
+
+var showLocal = function() {
+    list = JSON.parse(localStorage.getItem("name"))
+    if (!list) {
+        list = []
+    }
+    listMusicEl.innerHTML = "";
+    for (var i = 0; i < list.length; i++) {
+        listMusic(list[i])
+    }
+}
+
+// music information
+function searchMusic(description) {
+    console.log(description)
+fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=hip-hop&key=AIzaSyDUf1zrEu3jheS3z-l_onSbalX3A1jQelM')
+
+.then(function (response) {
+    if (response.ok) {
+        response.json().then(function (data) {
+            if (list.indexOf(description) ===-1) {
+                list.push(description)
+                localStorage.setItem("name", JSON.stringify(list));
+
+                showLocal()
+            }
+        })
+    }
+} 
+
+// .then(data => console.log(data))
+
+)
+
+
+}
+
+// function for the music you search
+var listMusic = function (musicIn) {
+
+    var firstS = document.createElement("button")
+    firstS.classList = " list-group-item list-group-item-action";
+
+    firstS.textContent = musicIn;
+    listMusicEl.appendChild(firstS)
+}
+
+document.getElementById("list-Music").addEventListener("click", function (event) {
+
+    searchMusic(event.target.textContent);
+    
 })
 
-var apiKey = ("AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU") //dans youtube api
+document.getElementById("search-btn").addEventListener("click", function (event) {
+    event.preventDefault();
 
-fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=hip-hop&key=AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU')
 
-.then(res => res.json())
+    var musicIn = document.getElementById("input-box").value;
+    document.getElementById("input-box").value = "";
 
-.then(data => console.log(data))
+    if (musicIn) {
+        
+        searchMusic(musicIn);
+
+    }
+});
+
+showLocal();
+
+
