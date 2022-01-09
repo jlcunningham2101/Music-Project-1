@@ -9,7 +9,19 @@
 //     var userInput = document.getElementById("input-box").value;
 //     console.log(userInput);
 // })
+//this is the fetch function for audioDB - search for artist name
+var audioApiKey = "523532";
+fetch("https://theaudiodb.com/api/v1/json/523532/search.php?s="userInput"")
+.then(res => res.json())
+.then(data => console.log(data))
 
+//this is the fetch function for audioDB - search for artist and song
+var audioApiKey = "523532";
+var artistName = userInput
+var singleName = userInput2
+fetch("https://theaudiodb.com/api/v1/json/523532/searchtrack.php?s="userInput"&t="userInput2"")
+.then(res => res.json())
+.then(data => console.log(data))
 // var apiKey = ("AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU") //dans youtube api
 
 // fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=hip-hop&key=AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU')
