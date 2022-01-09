@@ -51,6 +51,15 @@ var showLocal = function() {
 
 // function featches from youtube api
 
+
+// header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+// header 'Accept: application/json' \
+// compressed
+// original url: "https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=" + userInput + "&key=AIzaSyDUf1zrEu3jheS3z-l_onSbalX3A1jQelM" 
+
+var youtubeApiKey = "AIzaSyDUf1zrEu3jheS3z-l_onSbalX3A1jQelM";
+var youtubeApiUrl = "https://youtube.googleapis.com/youtube/v3/search?channelType=any&eventType=completed&order=title&safeSearch=moderate&key=" + youtubeApiKey;
+
 searchButton.addEventListener("click", function(event) {
     event.preventDefault();
     // console.log("click");
@@ -60,7 +69,7 @@ searchButton.addEventListener("click", function(event) {
 
     function searchMusic() {
         console.log(searchMusic);
-    fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=" + userInput + "&key=AIzaSyDUf1zrEu3jheS3z-l_onSbalX3A1jQelM")
+    fetch(youtubeApiUrl)
     .then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
