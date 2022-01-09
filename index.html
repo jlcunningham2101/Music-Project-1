@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Project #1-Working Title</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link href="./assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Project #1-Working Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link href="./assets/css/style.css">
 </head>
+
 <body>
 
   <article class="panel is-success">
     <p class="panel-heading">
-        Music Hub
+      Music Hub
     </p>
     <p class="panel-tabs">
       <a class="is-active">All</a>
@@ -24,31 +26,34 @@
 
     <!-- search input/submit button code starts here -->
     <!-- <div class="level"> -->
-      <!-- <div class="panel-block">
+    <!-- <div class="panel-block">
         <div class="level-item"> -->
-          <div class="columns">
-            <div class="column is-four-fifths">
-              <input id="input-box" class="input is-success w-100" type="text" placeholder="Artist name, track, lyrics">
-            </div>
-            <!-- <span class="icon is-left">
+    <div class="columns">
+      <div class="column is-four-fifths">
+        <input id="input-box" class="input is-success w-100" type="text" placeholder="Artist name, track, lyrics">
+      </div>
+      <!-- <span class="icon is-left">
               <i class="fas fa-search" aria-hidden="true"></i>
             </span> -->
-            <div class="column">
-              <button id="search-btn" class="button ml-3 ">Search</button>
-            </div>
-          </div>
-        <!-- </div>
+      <div class="column">
+        <button id="search-btn" class="button ml-3 ">Search</button>
+      </div>
+    </div>
+    <div>
+      <ul id="list-Music" class="list-group">
+      </ul>
+    </div>
+    <!-- </div>
       </div> -->
     <!-- </div>  -->
-  <!-- search/submit ends here -->
-   
-   
-   
-    <a class="panel-block is-active">
+    <!-- search/submit ends here -->
+
+
+
+    <!-- <a class="panel-block is-active">
       <span class="panel-icon">
         <i class="fas fa-book" aria-hidden="true"></i>
       </span>
-      bulma
     </a>
     <a class="panel-block">
       <span class="panel-icon">
@@ -67,14 +72,22 @@
         <i class="fas fa-book" aria-hidden="true"></i>
       </span>
       jgthms.github.io
-    </a>
+    </a> -->
+    <div class="columns">
+      <div class="columns is-12 is offset-9" id="Information">
+        <h2><span id="showMusic"></span></h2>
+        <div id="musicInfo"></div>
+      </div>
+    </div>
+
     <button class="button is-link is-outlined is-fullwidth">
-        Reset all filters
-      </button>
+      Reset all filters
+    </button>
   </article>
 
   <script type="text/javascript" src="http://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
 
   <script src="./assets/js/script.js"></script>
-  </body>
+</body>
+
 </html>
