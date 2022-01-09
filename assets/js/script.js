@@ -132,7 +132,7 @@ showLocal();
     // .then(res => res.json())
 
     // .then(data => console.log(data))
-})
+// })
 
 
 // this is the spotify fetch request, but I couldn't generate an access token
@@ -166,4 +166,11 @@ showLocal();
 //                 ));
 //             }
 
-
+fetch("https://theaudiodb.com/api/v1/json/523532/search.php?s={Artist name}")
+    .then(res => res.json())
+    .then(data => console.log(data))
+    //this is the fetch function for audioDB - search for artist and song
+    var audioApiKey = "523532";
+    fetch("https://theaudiodb.com/api/v1/json/523532/searchtrack.php?s={Artist_Name}&t={Single_Name}")
+    .then(res => res.json())
+    .then(data => console.log(data))
