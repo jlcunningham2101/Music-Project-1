@@ -78,34 +78,34 @@ function searchMusic(event) {
             })
     }
 
-    var listMusic = function (musicIn) {
+    // var listMusic = function (musicIn) {
 
-        var firstS = document.createElement("button")
-        firstS.classList = " list-group-item list-group-item-action";
+    //     var firstS = document.createElement("button")
+    //     firstS.classList = " list-group-item list-group-item-action";
 
-        firstS.textContent = musicIn;
-        listMusicEl.appendChild(firstS)
-    } 
+    //     firstS.textContent = musicIn;
+    //     listMusicEl.appendChild(firstS)
+    // } 
     
-    document.getElementById("list-Music").addEventListener("click", function (event) {
+    // document.getElementById("list-Music").addEventListener("click", function (event) {
 
-        searchMusic(event.target.textContent);
+    //     searchMusic(event.target.textContent);
 
-    })
+    // })
 
-    document.getElementById("search-btn").addEventListener("click", function (event) {
-        event.preventDefault();
+    // document.getElementById("search-btn").addEventListener("click", function (event) {
+    //     event.preventDefault();
 
 
-        var musicIn = document.getElementById("input-box").value;
-        document.getElementById("input-box").value = "";
+    //     var musicIn = document.getElementById("input-box").value;
+    //     document.getElementById("input-box").value = "";
 
-        if (musicIn) {
+    //     if (musicIn) {
 
-            searchMusic(musicIn);
+    //         searchMusic(musicIn);
 
-        }
-    });
+    //     }
+    // });
 
    
 
