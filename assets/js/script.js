@@ -120,7 +120,7 @@ showLocal();
     // .then(res => res.json())
 
     // .then(data => console.log(data))
-})
+// })
 
 
 // this is the spotify fetch request, but I couldn't generate an access token
