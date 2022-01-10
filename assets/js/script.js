@@ -2,6 +2,7 @@
 // var searchButton = document.getElementById("search-btn");
 // // console.log(searchButton);
 var apiKey = "AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU" //dans youtube api
+var audioApiKey = "523532";
 var list = []
 var listMusicEl = document.getElementById('#list-Music')
 var searchButton = document.getElementById("search-btn");
@@ -21,10 +22,10 @@ searchButton.addEventListener("click", function (event) {
 
 
     //this is the fetch function for audioDB - search for artist name
-    var audioApiKey = "523532";
     var audioArtistUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/search.php?s=" + userInput;
-    var audioTrackUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/searchtrack.php?s=" + userInput;
-    var audioAlbumUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/searchalbum.php?s=" + userInput;
+    // var audioTrackUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/searchtrack.php?s=" + userInput + userInput2; // requires 2 inputs
+        
+    // artist search- returns general artist info including name/bio/label/genre
     fetch(audioArtistUrl)
         .then(function(response) {
             if(response.ok) {
@@ -37,7 +38,7 @@ searchButton.addEventListener("click", function (event) {
         artistBucketEl.appendChild(artistNameEl);
         var artistBioEl = document.createElement("p");
         artistBioEl.textContent = data.artists[0].strBiographyEN;
-        artistBioEl.classList.add("is-size-5", "has-text-weight-bold")
+        artistBioEl.classList.add("is-size-5", "has-text-weight-medium")
         artistBucketEl.appendChild(artistBioEl);
         var artistGenreEl = document.createElement("p");
         artistGenreEl.textContent = "Genre: " + data.artists[0].strGenre;
@@ -48,18 +49,57 @@ searchButton.addEventListener("click", function (event) {
         artistLabelEl.classList.add("is-size-5", "has-text-weight-bold")
         artistBucketEl.appendChild(artistLabelEl);
 
-    });
-    } else {
-        alert("Error: Artist not found.");
+        albumCall();
+
+        });
+
     }
-    })
-    .catch(function(error) {
-    alert("Unable to connect AudioDB")
-    console.log(error);
-    }); 
 });
 
+})
 
+    // album search- returns a list of albums, yr release, review & description & intl sales
+var albumCall = function() {
+    var audioAlbumUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/searchalbum.php?s=" + userInput;
+    fetch(audioAlbumUrl)
+        .then(function(response) {
+        if(response.ok) {
+            response.json().then(function(data) {
+                console.log(data);
+        var albumBucketEl = document.getElementById("album-bucket");
+        var albumNameEl = document.createElement("p");
+        albumNameEl.textContent = "Album#1: " + data.album[0].strAlbum;
+        albumNameEl.classList.add("is-size-5", "has-text-weight-bold")
+        albumBucketEl.appendChild(albumNameEl);
+        var albumYrEl = document.createElement("p");
+        albumYrEl.textContent = "Released: " + data.album[0].intYearReleased;
+        albumYrEl.classList.add("is-size-5", "has-text-weight-bold")
+        albumBucketEl.appendChild(albumYrEl);
+        var albumDescrEl = document.createElement("p");
+        albumDescrEl.textContent = "Released: " + data.album[0].strDescriptionEN;
+        albumDescrEl.classList.add("is-size-5", "has-text-weight-bold")
+        albumBucketEl.appendChild(albumDescrEl);
+        var albumRevwEl = document.createElement("p");
+        albumRevwEl.textContent = "Released: " + data.album[0].strReview;
+        albumRevwEl.classList.add("is-size-5", "has-text-weight-bold")
+        albumBucketEl.appendChild(albumRevwEl);
+
+
+        // albumApiUrl - works, search is slow
+        // album data we can use: data.album[i].intSales, intYearReleased, strAlbum(album-name), strArtist, strDescriptionEN (album-info), strReview, strWikipediaID
+        // can we find a way to iterate through this data to pull out the info we want to display? 
+        })
+    } 
+    // else {
+    //     // alert("Error: Artist not found.");   // not allowed to use alerts- modals?
+    // }
+    // })
+    // .catch(function(error) {
+    // // alert("Unable to connect AudioDB") // again, not allowed to use alerts
+    // console.log(error);
+    // }); 
+    }) 
+}; 
 //     //this is the fetch function for audioDB - search for artist and song
 //     var audioApiKey = "523532";
 //     var artistName = userInput; // to be linked to search bar for artist name
@@ -93,10 +133,11 @@ function searchMusic(event) {
     
     console.log(userInput.value.trim());
     var search = userInput.value.trim()
-    var apiUrl= "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&order=rating&q=" + search + "&key=AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU"
+    var youtubeApiKey = "AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU";
+    var youtubeApiUrl= "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=playlist&q=" + search + "&key=" + youtubeApiKey;
    
         
-        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&order=rating&q=" + search + "&key=AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU")
+        fetch(youtubeApiUrl)
             .then(function (response) {
                 return response.json()
             }
@@ -148,8 +189,6 @@ searchButton.addEventListener("click", searchMusic);
 
 
 // .then(data => console.log(data))
-
-
 
 
 
