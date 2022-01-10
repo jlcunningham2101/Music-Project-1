@@ -10,26 +10,61 @@ var searchButton = document.getElementById("search-btn");
 // console.log(userInput);
 
 var userInput = document.getElementById("input-box");
+var userInput2 = "";
 
-// searchButton.addEventListener("click", function (event) {
-//     event.preventDefault();
-//     // console.log("click");
-//     // console.log(this);
-//     var userInput = document.getElementById("input-box").value;
-//     console.log(userInput);
+searchButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    // console.log("click");
+    // console.log(this);
+    var userInput = document.getElementById("input-box").value;
+    console.log(userInput);
 
 
-//     //this is the fetch function for audioDB - search for artist name
-//     var audioApiKey = "523532";
-//     fetch("https://theaudiodb.com/api/v1/json/523532/search.php?s=" + userInput)
-//         .then(res => res.json())
-//         .then(data => console.log(data))
+    //this is the fetch function for audioDB - search for artist name
+    var audioApiKey = "523532";
+    var audioArtistUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/search.php?s=" + userInput;
+    var audioTrackUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/searchtrack.php?s=" + userInput;
+    var audioAlbumUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/searchalbum.php?s=" + userInput;
+    fetch(audioArtistUrl)
+        .then(function(response) {
+            if(response.ok) {
+                response.json().then(function(data) {
+                    console.log(data);
+        var artistBucketEl = document.getElementById("artist-bucket");
+        var artistNameEl = document.createElement("p");
+        artistNameEl.textContent = "You searched for: " + data.artists[0].strArtist;
+        artistNameEl.classList.add("is-size-5", "has-text-weight-bold")
+        artistBucketEl.appendChild(artistNameEl);
+        var artistBioEl = document.createElement("p");
+        artistBioEl.textContent = data.artists[0].strBiographyEN;
+        artistBioEl.classList.add("is-size-5", "has-text-weight-bold")
+        artistBucketEl.appendChild(artistBioEl);
+        var artistGenreEl = document.createElement("p");
+        artistGenreEl.textContent = "Genre: " + data.artists[0].strGenre;
+        artistGenreEl.classList.add("is-size-5", "has-text-weight-bold")
+        artistBucketEl.appendChild(artistGenreEl);
+        var artistLabelEl = document.createElement("p");
+        artistLabelEl.textContent = "Label: " + data.artists[0].strLabel;
+        artistLabelEl.classList.add("is-size-5", "has-text-weight-bold")
+        artistBucketEl.appendChild(artistLabelEl);
+
+    });
+    } else {
+        alert("Error: Artist not found.");
+    }
+    })
+    .catch(function(error) {
+    alert("Unable to connect AudioDB")
+    console.log(error);
+    }); 
+});
+
 
 //     //this is the fetch function for audioDB - search for artist and song
 //     var audioApiKey = "523532";
 //     var artistName = userInput; // to be linked to search bar for artist name
 //     var singleName = userInput2; // to be linked to search bar for track name
-//     fetch("https://theaudiodb.com/api/v1/json/523532/searchtrack.php?s=" + userInput + "&t=" + userInput2)
+//     fetch( + "&t=" + userInput2)
 //         .then(res => res.json())
 //         .then(data => console.log(data))
 
@@ -58,10 +93,10 @@ function searchMusic(event) {
     
     console.log(userInput.value.trim());
     var search = userInput.value.trim()
-    var apiUrl= "https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=" + search + "&key=AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU"
+    var apiUrl= "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&order=rating&q=" + search + "&key=AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU"
    
         
-        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=" + search + "&key=AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU")
+        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&order=rating&q=" + search + "&key=AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU")
             .then(function (response) {
                 return response.json()
             }
