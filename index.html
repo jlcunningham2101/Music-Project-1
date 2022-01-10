@@ -25,20 +25,18 @@
     </p>
 
     <!-- search input/submit button code starts here -->
-    <!-- <div class="level"> -->
-    <!-- <div class="panel-block">
-        <div class="level-item"> -->
+
     <div class="columns">
       <div class="column is-four-fifths">
-        <input id="input-box" name="seachedMusic" class="input is-danger w-100" type="text"
+        <input id="input-box" name="searchedMusic" class="input is-danger w-100" type="text"
           placeholder="Artist Name, Track Title, or Lyrics" />
       </div>
       <div class="select is-normal">
         <select class="is-focused" name="music-type" class="select-dropdown">
-          <option value="" disabled selected>Pick a task type</option>
-          <option value="Songs">Songs</option>
-          <option value="Videos">Videos</option>
-          <option value="Lyrics">Lyrics</option>
+          <option value="" disabled selected>Choose search type</option>
+          <option value="Artist">Bio</option>
+          <option value="Videos">Albums</option>
+          <option value="Lyrics">Tracks</option>
         </select>
       </div>
       <!-- <span class="icon is-left">
@@ -50,13 +48,16 @@
     </div>
     <div>
 
-      <!-- </div>
-      </div> -->
-      <!-- </div>  -->
-      <!-- search/submit ends here -->
+    <!-- search/submit ends here -->
 
-
-      <h2>Searched Music:</h2>
+    <!-- search results dynamically created in this div -->
+    <div id="artist-bucket" class="artist-list-group content has-background-light">
+      <h2 class="has-text-danger-dark">About this Artist</h2>
+    </div>
+    <div id="album bucket" class="album-list-group content has-background-light">
+      <h2 class="has-text-danger-dark">Album Information</h2>
+    </div>
+    
       <ul id="list-Music" class="list-group">
       </ul>
     </div>
