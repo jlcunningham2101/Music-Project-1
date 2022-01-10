@@ -74,7 +74,7 @@ searchButton.addEventListener("click", function (event) {
 
 })
 
-    // album search- returns a list of albums, yr release, review & description & intl sales
+    // album search- returns a list of albums, yr release, review & description & intl sales, artist picture
 var albumCall = function() {
     var audioAlbumUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/searchalbum.php?s=" + userInput;
     fetch(audioAlbumUrl)
@@ -99,6 +99,9 @@ var albumCall = function() {
         albumRevwEl.textContent = "Released: " + data.album[0].strReview;
         albumRevwEl.classList.add("is-size-5", "has-text-weight-bold")
         albumBucketEl.appendChild(albumRevwEl);
+        artistPictureE1.textContent = "Picture: " + data.artists[0].strBanner;
+        artistPictureE1.classList.add("is-size-5", "has-text-weight-bold")
+        artistPictureEl.appendChild(artistPictureEl);
 
 
         // albumApiUrl - works, search is slow
