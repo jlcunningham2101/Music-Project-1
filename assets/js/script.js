@@ -25,7 +25,7 @@ searchButton.addEventListener("click", function (event) {
     var audioArtistUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/search.php?s=" + userInput;
     // var audioTrackUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/searchtrack.php?s=" + userInput + userInput2; // requires 2 inputs
         
-    // artist search- returns general artist info including name/bio/label/genre
+    // artist search- returns general artist info including name/bio/label/genre/picture/social media/last FM Chart
     fetch(audioArtistUrl)
         .then(function(response) {
             if(response.ok) {
@@ -48,6 +48,22 @@ searchButton.addEventListener("click", function (event) {
         artistLabelEl.textContent = "Label: " + data.artists[0].strLabel;
         artistLabelEl.classList.add("is-size-5", "has-text-weight-bold")
         artistBucketEl.appendChild(artistLabelEl);
+        var artistPicture = document.createElement("p");
+        artistPictureE1.textContent = "Picture: " + data.artists[0].strBanner;
+        artistPictureE1.classList.add("is-size-5", "has-text-weight-bold")
+        artistPictureEl.appendChild(artistPictureEl);
+        var artistSocialMedia = document.createElement("p");
+        artistSocialMediaE1.textContent = "Social Media: " + data.artists[0].strFacebook;
+        artistSocialMediaE1.classlist.add("is-size-5", "has-text-weight-bold")
+        artistSocialMediaEl.appendChild(artistSocialMediaEl);
+        var artistLastFmChart = document.createElement("p");
+        artistLastFmChartE1.textContent = "Last FM Chart: " + data.artists[0].strLastFMChart;
+        artistLastFmChartE1.classlist.add("is-size-5", "has-text-weight-bold")
+        artistLastFmChartE1.appendChild(artistLastFmChartEl);
+
+
+
+
 
         albumCall();
 
@@ -58,7 +74,7 @@ searchButton.addEventListener("click", function (event) {
 
 })
 
-    // album search- returns a list of albums, yr release, review & description & intl sales
+    // album search- returns a list of albums, yr release, review & description & intl sales, artist picture
 var albumCall = function() {
     var audioAlbumUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/searchalbum.php?s=" + userInput;
     fetch(audioAlbumUrl)
@@ -83,6 +99,9 @@ var albumCall = function() {
         albumRevwEl.textContent = "Released: " + data.album[0].strReview;
         albumRevwEl.classList.add("is-size-5", "has-text-weight-bold")
         albumBucketEl.appendChild(albumRevwEl);
+        artistPictureE1.textContent = "Picture: " + data.artists[0].strBanner;
+        artistPictureE1.classList.add("is-size-5", "has-text-weight-bold")
+        artistPictureEl.appendChild(artistPictureEl);
 
 
         // albumApiUrl - works, search is slow
