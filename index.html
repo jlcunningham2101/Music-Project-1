@@ -8,7 +8,24 @@
   <title>Find Your Favorite Artists, Songs, Videos, and Lyrics</title>
   <link href="./assets/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+  <style>
+    body, html {
+      background-color: white;
+      color: black;
+      font: red
+    }
+    
+    .dark-mode {
+      background-color: black;
+      color: white;
+      font: red;
+    }
+    </style>
+    
 </head>
+
+
 
 <body>
 
@@ -39,12 +56,19 @@
             </span> -->
       <div class="column">
         <button id="search-btn" class="button is-danger ml-3">Search</button>
+        <button id="dark-mode" class="button is-danger ml-3" onclick="myFunction()">Dark Mode</button>
       </div>
     </div>
     <div>
 
     <!-- search/submit ends here -->
 
+    <!-- Reset/clear search button -->
+    <button id="clear-search" class="button is-link is-outlined is-fullwidth">
+      Reset all filters
+    </button>
+
+    <!-- Search results starts to populate here -->
     <div>
       <h2>Here's a random video related to your artist</h2>
     </div>
@@ -65,7 +89,12 @@
       </ul>
     </div>
 
-
+    <div class="columns">
+      <div class="columns is-12 is offset-9" id="Information">
+        <h2><span id="showMusic"></span></h2>
+        <div id="musicInfo"></div>
+      </div>
+    </div>
     
     <!-- <a class="panel-block is-active">
       <span class="panel-icon">
@@ -97,10 +126,15 @@
       </div>
     </div>
 
-    <button class="button is-link is-outlined is-fullwidth">
-      Reset all filters
-    </button>
+
   </article>
+  <script>
+  //  this function controls the darkmode
+    function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+  </script>
 
   <script type="text/javascript" src="http://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
