@@ -48,20 +48,25 @@ searchButton.addEventListener("click", function (event) {
         artistLabelEl.textContent = "Label: " + data.artists[0].strLabel;
         artistLabelEl.classList.add("is-size-5", "has-text-weight-bold")
         artistBucketEl.appendChild(artistLabelEl);
-        var artistPicture = document.createElement("p");
-        artistPictureE1.textContent = "Picture: " + data.artists[0].strBanner;
-        artistPictureE1.classList.add("is-size-5", "has-text-weight-bold")
-        artistPictureEl.appendChild(artistPictureEl);
-        var artistSocialMedia = document.createElement("p");
-        artistSocialMediaE1.textContent = "Social Media: " + data.artists[0].strFacebook;
-        artistSocialMediaE1.classlist.add("is-size-5", "has-text-weight-bold")
-        artistSocialMediaEl.appendChild(artistSocialMediaEl);
-        var artistLastFmChart = document.createElement("p");
-        artistLastFmChartE1.textContent = "Last FM Chart: " + data.artists[0].strLastFMChart;
-        artistLastFmChartE1.classlist.add("is-size-5", "has-text-weight-bold")
-        artistLastFmChartE1.appendChild(artistLastFmChartEl);
+        var artistPictureEl = document.createElement("p");
+        artistPictureEl.textContent = "Picture: " + data.artists[0].strBanner;
+        artistPictureEl.classList.add("is-size-5", "has-text-weight-bold")
+        artistBucketEl.appendChild(artistPictureEl);
+        var artistSocialMediaEl = document.createElement("p");
+        artistSocialMediaEl.textContent = "Social Media: " + data.artists[0].strFacebook;
+        artistSocialMediaEl.classlist.add("is-size-5", "has-text-weight-bold")
+        artistBucketEl.appendChild(artistSocialMediaEl);
+        var artistLastFmChartEl = document.createElement("p");
+        artistLastFmChartEl.textContent = "Last FM Chart: " + data.artists[0].strLastFMChart;
+        artistLastFmChartEl.classlist.add("is-size-5", "has-text-weight-bold")
+        artistBucketEl.appendChild(artistLastFmChartEl);
 
 
+// urls/videos/thumbnails on the page?
+// limit bio to 10 lines & then have a read more link?
+// work on showing album info?
+// reset filter button to clear search
+// padding on page
 
 
 
@@ -153,7 +158,7 @@ function searchMusic(event) {
     console.log(userInput.value.trim());
     var search = userInput.value.trim()
     var youtubeApiKey = "AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU";
-    var youtubeApiUrl= "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&type=playlist&q=" + search + "&key=" + youtubeApiKey;
+    var youtubeApiUrl= "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + search + "&key=" + youtubeApiKey;
    
         
         fetch(youtubeApiUrl)
