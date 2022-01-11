@@ -57,18 +57,27 @@
     <div>
     <!-- search/submit ends here -->
 
+    <div>
+      <h2>Here's a random video related to your artist</h2>
+    </div>
+    <iframe class="iframeClass">
+      <!-- generate a random Youtube video from artist searched-->
+    </iframe>
+
     <!-- search results dynamically created in this div -->
-    <div id="artist-bucket" class="artist-list-group content has-background-light">
+    <div id="artist-bucket" class="artist-list-group content has-background-light px-5 py-3">
       <h2 class="has-text-danger-dark">About this Artist</h2>
     </div>
+      
     <div id="album bucket" class="album-list-group content has-background-light">
       <h2 class="has-text-danger-dark">Music Video</h2>
       <div id="player"></div>
-    </div>
     
+    <div>
       <ul id="list-Music" class="list-group">
       </ul>
     </div>
+
     <div class="columns">
       <div class="columns is-12 is offset-9" id="Information">
         <h2><span id="showMusic"></span></h2>
@@ -89,6 +98,7 @@
        element.classList.toggle("dark-mode");
     }
     </script>
+
 
   <script src="./assets/js/script.js"></script>
 </body>

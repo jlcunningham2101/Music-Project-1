@@ -52,10 +52,8 @@ searchButton.addEventListener("click", function (event) {
                     albumCall();
 
                 });
-
             }
         });
-
 })
 
 // album search- returns a list of albums, yr release, review & description & intl sales
@@ -100,6 +98,7 @@ var albumCall = function () {
             // }); 
         })
 };
+
 //     //this is the fetch function for audioDB - search for artist and song
 //     var audioApiKey = "523532";
 //     var artistName = userInput; // to be linked to search bar for artist name
@@ -217,6 +216,7 @@ function searchMusic(event) {
 // //     firstS.textContent = musicIn;
 // //     listMusicEl.appendChild(firstS)
 // // } 
+
 
 // // document.getElementById("list-Music").addEventListener("click", function (event) {
 
