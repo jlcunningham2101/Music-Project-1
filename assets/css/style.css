@@ -2,6 +2,18 @@
     font-weight: bold!important;
 }
 
+/* body, html {
+  background-color: white;
+  color: black;
+  font: red
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+  font: red;
+} */
+
 /* Dropdown Menu */
 .dropbtn {
     background-color: #3498DB;
