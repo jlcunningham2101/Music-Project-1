@@ -8,14 +8,26 @@
   <title>Find Your Favorite Artists, Songs, Videos, and Lyrics</title>
   <link href="./assets/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+  <style>
+    body, html {
+      background-color: white;
+      color: black;
+      font: red
+    }
+    
+    .dark-mode {
+      background-color: black;
+      color: white;
+      font: red;
+    }
+    </style>
 </head>
 
 <body>
 
   <article class="panel is-danger">
-    <p class="panel-heading">
-      Music Hub
-    </p>
+    <p class="panel-heading">Music Hub</p>
     <br />
     <br />
 
@@ -39,10 +51,10 @@
             </span> -->
       <div class="column">
         <button id="search-btn" class="button is-danger ml-3">Search</button>
+        <button id="dark-mode" class="button is-danger ml-3" onclick="myFunction()">Dark Mode</button>
       </div>
     </div>
     <div>
-
     <!-- search/submit ends here -->
 
     <div>
@@ -56,40 +68,16 @@
     <div id="artist-bucket" class="artist-list-group content has-background-light px-5 py-3">
       <h2 class="has-text-danger-dark">About this Artist</h2>
     </div>
-    <div id="album-bucket" class="album-list-group content has-background-light px-5 py-3">
-      <h2 class="has-text-danger-dark">Album Information</h2>
-    </div>
+      
+    <div id="album bucket" class="album-list-group content has-background-light">
+      <h2 class="has-text-danger-dark">Music Video</h2>
+      <div id="player"></div>
     
     <div>
       <ul id="list-Music" class="list-group">
       </ul>
     </div>
 
-
-    
-    <!-- <a class="panel-block is-active">
-      <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
-      </span>
-    </a>
-    <a class="panel-block">
-      <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
-      </span>
-      marksheet
-    </a>
-    <a class="panel-block">
-      <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
-      </span>
-      minireset.css
-    </a>
-    <a class="panel-block">
-      <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
-      </span>
-      jgthms.github.io
-    </a> -->
     <div class="columns">
       <div class="columns is-12 is offset-9" id="Information">
         <h2><span id="showMusic"></span></h2>
@@ -103,7 +91,15 @@
   </article>
 
   <script type="text/javascript" src="http://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    function myFunction() {
+       var element = document.body;
+       element.classList.toggle("dark-mode");
+    }
+    </script>
+
+
   <script src="./assets/js/script.js"></script>
 </body>
 
