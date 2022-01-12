@@ -78,7 +78,7 @@ searchButton.addEventListener("click", function (event) {
   });
 });
 
-// album search- returns a list of albums, yr release, review & description & intl sales, artist picture
+// album search- returns a list of albums, yr release, & description & intl sales, artist picture
 var albumCall = function () {
   try {
     var userInput = document.getElementById("input-box").value;
@@ -112,10 +112,10 @@ var albumCall = function () {
               "DESCRIPTION: " + data.album[i].strDescriptionEN;
             albumDescrEl.classList.add("is-size-5", "has-text-weight-medium");
             albumBucketEl.appendChild(albumDescrEl);
-            var albumRevwEl = document.createElement("p");
-            albumRevwEl.textContent = "REVIEWS: " + data.album[i].strReview;
-            albumRevwEl.classList.add("is-size-5", "has-text-weight-medium");
-            albumBucketEl.appendChild(albumRevwEl);
+            //var albumRevwEl = document.createElement("p");
+            //albumRevwEl.textContent = "REVIEWS: " + data.album[i].strReview;
+            //albumRevwEl.classList.add("is-size-5", "has-text-weight-medium");
+            //albumBucketEl.appendChild(albumRevwEl);
 
             // artistPictureEl.textContent = "Picture: " + data.artists[0].strBanner;
             // artistPictureEl.classList.add("is-size-5", "has-text-weight-bold")
