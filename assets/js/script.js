@@ -120,6 +120,13 @@ var albumCall = function () {
             // artistPictureEl.textContent = "Picture: " + data.artists[0].strBanner;
             // artistPictureEl.classList.add("is-size-5", "has-text-weight-bold")
             // artistBucketEl.appendChild(artistPictureEl);
+            var albumImageEl = document.createElement("img");
+            albumImageEl.setAttribute("src", data.album[i].strAlbumThumb);
+            albumImageEl.setAttribute(
+              "alt",
+              "Image of " + data.album[i].strAlbum
+            );
+            albumBucketEl.appendChild(albumImageEl);
           }
         });
       }
