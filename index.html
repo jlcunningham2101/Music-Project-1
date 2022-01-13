@@ -24,19 +24,18 @@
     }
 
   nav {
-    margin: 0;
+    margin: auto;
   }
 
   nav li {
-    display: inline;
-    flex-wrap: wrap;
-    margin: 0 60;
-    justify-content: space-between;
+    display: inline-flex;
+    margin: 0 auto;
+    justify-content: space-evenly;
     align-items: center;
     list-style: none;
-    padding: 10px 15px;
+    padding: 0 15% 5px 15%;
     font-weight: bolder;
-    font-size: 2.55vw;
+    font-size: 24px;
 }
 
   nav:hover {
@@ -68,13 +67,16 @@
     <nav>
       <ul>
         <li>
-          <a href="#albums">Albums</a>
+          <a href="#artist">Artist</a>
         </li>
         <li>
-          <a href="#artist">Artist</a>
+          <a href="#albums">Albums</a>
         </li>
       </ul>
     </nav>
+
+    <br>
+    <br>
 
     <!-- search input/submit button code starts here -->
 
@@ -113,18 +115,13 @@
         <br>
         <h2>Check out random videos for your artist below!</h2>
       </div>
-      <div id="frame-wrapper">
-        <!-- <iframe class="iframeClass">
-        <!- generate a random Youtube video from artist searched -->
-      </iframe>
-      </div>
+      <br>
+      <div id="frame-wrapper"></div>
 
       <!-- search results dynamically created in this div -->
       <div id="artist-bucket" class="artist-list-group content has-background-none px-5 py-3">
-        <h2 class="has-text-danger-dark">About this Artist</h2>
       </div>
       <div id="album-bucket" class="album-list-group content has-background-none px-5 py-3">
-        <h2 class="has-text-danger-dark">Album Information</h2>
       </div>
 
       <div>

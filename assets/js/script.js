@@ -35,6 +35,11 @@ searchButton.addEventListener("click", function (event) {
       response.json().then(function (data) {
         console.log(data);
         artistBucketEl.innerHTML = "";
+        var aboutArtistHead = document.createElement("h2");
+        aboutArtistHead.setAttribute("id", "artist")
+        aboutArtistHead.classList.add("has-text-danger-dark");
+        aboutArtistHead.textContent = "About this Artist";
+        artistBucketEl.appendChild(aboutArtistHead);
         var artistNameEl = document.createElement("p");
         artistNameEl.textContent =
           "You searched for: " + data.artists[0].strArtist;
@@ -97,6 +102,11 @@ var albumCall = function () {
           console.log(data);
 
           albumBucketEl.innerHTML = "";
+          var aboutAlbumHead = document.createElement("h2");
+          aboutAlbumHead.setAttribute("id", "albums")
+          aboutAlbumHead.classList.add("has-text-danger-dark");
+          aboutAlbumHead.textContent = "Album Information";
+          albumBucketEl.appendChild(aboutAlbumHead);
           for (var i = 0; i < data.album.length; i++) {
             var albumNameEl = document.createElement("p");
             albumNameEl.textContent = "Album Name : " + data.album[i].strAlbum;
@@ -148,7 +158,7 @@ function searchMusic(event) {
   // console.log(userInput.value.trim());
   var youtubeApiKey = "AIzaSyDUf1zrEu3jheS3z-l_onSbalX3A1jQelM";
   var youtubeApiUrl =
-    "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" +
+    "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=" +
     search +
     "&key=" +
     youtubeApiKey;
@@ -159,6 +169,8 @@ function searchMusic(event) {
     })
     .then(function (data) {
       frameEl.innerHTML = "";
+
+    frameEl.classList.add("mx-5", "px-3")  
       //   console.log(data.items);
 
       // if (list.indexOf() === -1) {   //took out description from function
