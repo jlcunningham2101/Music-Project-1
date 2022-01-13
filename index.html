@@ -22,6 +22,34 @@
       color: white;
       font: red;
     }
+
+  nav {
+    margin: 7px 0;
+  }
+
+  nav li {
+    display: inline;
+    flex-wrap: wrap;
+    margin: 0 60;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 10px 15px;
+    font-weight: bolder;
+    font-size: 2.55vw;
+}
+
+  nav:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 15px;
+    text-shadow: none;
+  }
+
+  a {
+    color: #f14668;
+  }
+
   </style>
 
 </head>
@@ -32,10 +60,21 @@
 
   <article class="panel is-danger">
     <p class="panel-heading">
-      Music Hub
+      Populate Music
     </p>
     <br />
     <br />
+
+    <nav>
+      <ul>
+        <li>
+          <a href="#albums">Albums</a>
+        </li>
+        <li>
+          <a href="#artist">Artist</a>
+        </li>
+      </ul>
+    </nav>
 
     <!-- search input/submit button code starts here -->
 
@@ -76,15 +115,15 @@
       </div>
       <div id="frame-wrapper">
         <!-- <iframe class="iframeClass">
-        <!-- generate a random Youtube video from artist searched
-      </iframe> -->
+        <!- generate a random Youtube video from artist searched -->
+      </iframe>
       </div>
 
       <!-- search results dynamically created in this div -->
-      <div id="artist-bucket" class="artist-list-group content has-background-light px-5 py-3">
+      <div id="artist-bucket" class="artist-list-group content has-background-none px-5 py-3">
         <h2 class="has-text-danger-dark">About this Artist</h2>
       </div>
-      <div id="album-bucket" class="album-list-group content has-background-light px-5 py-3">
+      <div id="album-bucket" class="album-list-group content has-background-none px-5 py-3">
         <h2 class="has-text-danger-dark">Album Information</h2>
       </div>
 
