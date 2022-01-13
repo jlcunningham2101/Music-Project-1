@@ -178,6 +178,17 @@ function searchMusic(event) {
     });
 }
 
+// function to clear the page and start a new search
+var resetBtn = document.getElementById("clear-search");
+resetBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  console.log("click");
+  albumBucketEl.innerHTML = "";
+  artistBucketEl.innerHTML = "";
+  frameEl.innerHTML = "";
+  document.getElementById("input-box").value = "";
+});
+
 // to clear video, src = "", add a generic placeholder
 // to clear paragraphs , textcontent = ""
 
