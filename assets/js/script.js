@@ -208,6 +208,24 @@ resetBtn.addEventListener("click", function (event) {
   document.getElementById("input-box").value = "";
 });
 
+function myFunction() {
+  var element = document.body;
+  var toggle = element.classList.toggle("dark-mode");
+
+ localStorage.setItem("darkMode",toggle)
+}
+
+function toggle(){
+      var toggleVal = localStorage.getItem("darkMode")
+      console.log(toggleVal)
+  if(toggleVal === "true"){
+    var element = document.body;
+    var toggle = element.classList.toggle("dark-mode");
+  }
+
+}
+toggle()
+
 // to clear video, src = "", add a generic placeholder
 // to clear paragraphs , textcontent = ""
 
