@@ -14,8 +14,7 @@ var artistBucketEl = document.getElementById("artist-bucket");
 
 searchButton.addEventListener("click", function (event) {
   event.preventDefault();
-  // console.log("click");
-  // console.log(this);
+  console.log("click");
   var userInput = document.getElementById("input-box").value;
   // console.log(userInput);
 
@@ -26,7 +25,6 @@ searchButton.addEventListener("click", function (event) {
     audioApiKey +
     "/search.php?s=" +
     userInput;
-  // var audioTrackUrl = "https://theaudiodb.com/api/v1/json/" + audioApiKey + "/searchtrack.php?s=" + userInput + userInput2; // requires 2 inputs
 
   // artist search- returns general artist info including name/bio/label/genre/picture/social media/last FM Chart
   fetch(audioArtistUrl).then(function (response) {
@@ -73,7 +71,7 @@ searchButton.addEventListener("click", function (event) {
 
         var artistPictureEl = document.createElement("img");
         artistPictureEl.setAttribute("src", data.artists[0].strArtistBanner);
-        // artistPictureEl.setAttribute("alt", data.artists[0].strArtistBanner);
+        artistPictureEl.setAttribute("alt", data.artists[0].strArtistBanner);
         artistBucketEl.appendChild(artistPictureEl);
 
         //calls the album search function
