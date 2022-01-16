@@ -41,19 +41,19 @@
     <!-- search input/submit button code starts here -->
 
     <div class="columns is-mobile">
-      <div class="column is-4">
-        <input id="input-box" name="searchedMusic" class="input is-danger w-100" type="text"
+      <div class="column is-5">
+        <input id="input-box" name="searchedMusic" class="input is-danger" type="text"
           placeholder="Search Artist Name" />
       </div>
-      <div class="column">
+      </div>
+      <div class="columns is-mobile">
         <button id="search-btn" class="button is-danger ml-6">Search</button>
         <!-- Reset/clear search button -->
-        <button id="clear-search" class="button is-danger ml-3">
+        <button id="clear-search" class="button is-danger ml-4">
           Clear Search
         </button>
-        <button id="dark-mode" class="button is-danger ml-3" onclick="myFunction()"><span
+        <button id="dark-mode" class="button is-danger ml-4" onclick="myFunction()"><span
             class="oi oi-moon"></span></button>
-      </div>
     </div>
     <div>
 
@@ -93,8 +93,10 @@
   </article>
   <div>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  </div class="columns is-mobile">
+  <div class="columns is-12">
+    <footer>&copy 2022 Populate Music</footer>
   </div>
-  <footer>&copy 2022 Populate Music</footer>
   <script type="text/javascript" src="http://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
