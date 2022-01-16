@@ -77,5 +77,4 @@ THEN I am presented with a responsive layout that adapts to my viewport
 
 ## Challenges to Address for Future Improvements:
 
-1. ID why an empty search/string returns a result for music videos and biographical information
-2. Error handling - when an error is found and the user is prompted, the page isn't easily reset for new searches
+1. Limited API calls to Youtube restricts ability to test our application. We have been using multiple Youtube API keys throughout development, but kept getting a `GET: 403` error just before submitting on 01/16/2022. All Youtube API keys are available at lines 1-3 of the `script.js` file, and should hopefully regerate within 24 hours.

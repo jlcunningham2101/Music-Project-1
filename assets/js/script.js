@@ -57,7 +57,7 @@ function artistSearch() {
           albumBucketEl = "";
           artistBucketEl = "";
           errorMsgEl.textContent =
-            "Couldn't find artist but check out these videos.";
+            "Couldn't find artist but check out these videos";
           errorMsgEl.classList.add("is-size-5", "has-text-danger");
         } else {
           errorMsgEl.textContent =
@@ -146,7 +146,7 @@ var albumCall = function () {
             albumBucketEl = "";
             artistBucketEl = "";
             errorMsgEl.textContent =
-              "Couldn't find artist but check out these videos.";
+              "Couldn't find artist but check out these videos";
             errorMsgEl.classList.add("is-size-5", "has-text-danger");
           } else {
             albumBucketEl.innerHTML = "";
