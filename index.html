@@ -6,65 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Find Your Favorite Artist's Songs, Albums, and Videos</title>
+  <link rel="icon" type="image/jpg" href="assets/images/favicon-16x16.png" />
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
- <link href="./assets/css/style.css">
-  <style>
-    body,
-    html {
-      background-color: white;
-      color: black;
-      font: red;
-      min-height:100vh;
-    }
-
-    .dark-mode {
-      background-color: black;
-      color: white;
-      font: red;
-    }
-
-  nav {
-    margin: auto;
-  }
-
-  nav li {
-    display: inline-flex;
-    margin: 0 auto;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
-    padding: 0 20% 5px 20%;
-    font-weight: bolder;
-    font-size: 24px;
-}
-
-  nav:hover {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-    border-radius: 15px;
-    text-shadow: none;
-  }
-
-  ul {
-    margin:auto;
-  }
-
-  a {
-    color: #f14668;
-  }
-
-  h3 {
-    margin: 0 10px;
-  }
-
-  #input-box {
-    margin: 0 10px;
-  }
-
-  </style>
-
+ <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 
@@ -94,24 +40,13 @@
 
     <!-- search input/submit button code starts here -->
 
-    <div class="columns">
-      <div class="column is-4 ">
+    <div class="columns is-mobile">
+      <div class="column is-4">
         <input id="input-box" name="searchedMusic" class="input is-danger w-100" type="text"
           placeholder="Artist Name or Album" />
       </div>
-      <!-- <div class="select is-normal">
-        <select class="is-focused" name="music-type" class="select-dropdown">
-          <option value="" disabled selected>Choose search type</option>
-          <option value="Artist">Bio</option>
-          <option value="Videos">Albums</option>
-          <option value="Lyrics">Tracks</option>
-        </select>
-      </div> -->
-      <!-- <span class="icon is-left">
-              <i class="fas fa-search" aria-hidden="true"></i>
-            </span> -->
       <div class="column">
-        <button id="search-btn" class="button is-danger ml-3">Search</button>
+        <button id="search-btn" class="button is-danger ml-6">Search</button>
         <!-- Reset/clear search button -->
       <button id="clear-search" class="button is-danger ml-3">
         Clear Search
