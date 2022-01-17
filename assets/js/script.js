@@ -198,9 +198,8 @@ function searchMusic(event) {
   // console.log(this);
 
   var search = userInput.value.trim();
-  // console.log(search);
-
-  var youtubeApiKey = "AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU";
+  // console.log(userInput.value.trim());
+  var youtubeApiKey = "AIzaSyDUf1zrEu3jheS3z-l_onSbalX3A1jQelM";
   var youtubeApiUrl =
     "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=" +
     search +
@@ -212,11 +211,9 @@ function searchMusic(event) {
       return response.json();
     })
     .then(function (data) {
-      console.log(response);
       frameEl.innerHTML = "";
 
-      frameEl.classList.add("mx-5", "px-3");
-
+    frameEl.classList.add("mx-5", "px-3")
       //array of videos
       var searchVideos = [];
       for (var item of data.items) {
