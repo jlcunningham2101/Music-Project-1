@@ -200,7 +200,7 @@ function searchMusic(event) {
   var search = userInput.value.trim();
   // console.log(search);
 
-  var youtubeApiKey = "AIzaSyCxHlQ0rxcjKNgTev27MpxOO5KsGfxajQ0";
+  var youtubeApiKey = "AIzaSyDl7y_TqRCoUxoKJ8d5CPkotvqL4J94ydU";
   var youtubeApiUrl =
     "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=" +
     search +
